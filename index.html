@@ -1,9 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <title>My Site!</title>
-    </head>
-    <body>
-        <h1>This is my GitHub Pages website!</h1>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yee Jingye | Researcher & Thinker</title>
+    <meta name="description" content="A personal portfolio of a researcher and thinker. Curiosity, rigour, and conviction guide my work. Grounded thinking, carefully applied." />
+    <meta name="author" content="Jingye Yee" />
+
+    <meta property="og:title" content="Researcher & Thinker | Personal Portfolio" />
+    <meta property="og:description" content="Curiosity, rigor, and conviction guide my work. Grounded thinking, carefully applied." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Portfolio" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <script>
+      (function () {
+        var l = window.location;
+        if (l.search && l.search.startsWith("?/")) {
+          var path = l.search.slice(2);
+          var queryIndex = path.indexOf("&");
+          var newPath = queryIndex === -1 ? path : path.slice(0, queryIndex);
+          var newSearch = queryIndex === -1 ? "" : "?" + path.slice(queryIndex + 1);
+          window.history.replaceState(null, "", l.pathname + newPath + newSearch + l.hash);
+        }
+      })();
+    </script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
