@@ -10,7 +10,11 @@ export default defineConfig(({ mode }) => {
   const githubRepo = process.env.GITHUB_REPOSITORY?.split("/")?.[1];
   const base =
     env.VITE_BASE ??
-    (mode === "production" && githubRepo ? `/${githubRepo}/` : "/");
+    (mode === "production" && githubRepo
+      ? githubRepo.endsWith(".github.io")
+        ? "/"
+        : `/${githubRepo}/`
+      : "/");
 
   return {
     base,
