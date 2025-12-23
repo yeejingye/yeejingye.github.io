@@ -35,6 +35,11 @@ jobs:
           VITE_BASE: /
         run: npm run build
 
+      - name: Include custom domain + disable Jekyll
+        run: |
+          cp CNAME dist/CNAME
+          touch dist/.nojekyll
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 

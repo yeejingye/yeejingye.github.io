@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting…</title>
+    <script>
+      (function () {
+        // For GitHub Pages project sites this should usually be 1 (keep the repo name).
+        // For user/organization sites it should be 0.
+        var pathSegmentsToKeep = 0;
+
+        var l = window.location;
+        var base = l.pathname
+          .split("/")
+          .slice(0, 1 + pathSegmentsToKeep)
+          .join("/")
+          .replace(/\/$/, "") + "/";
+
+        l.replace(
+          l.origin +
+            base +
+            "?/" +
+            l.pathname
+              .slice(base.length - 1)
+              .split("/")
+              .slice(1)
+              .join("/") +
+            (l.search ? "&" + l.search.slice(1) : "") +
+            l.hash
+        );
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>
