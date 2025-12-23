@@ -46,7 +46,7 @@ const Index = () => {
               <h1 className="tracking-tight">
                 Yee Jingye, Ph.D.
                 <br />
-                <span className="text-muted-foreground text-4xl">Post-Doctoral Researcher</span>
+                <span className="text-muted-foreground text-4xl">Postdoctoral Researcher</span>
               </h1>
 
               <p className="text-xl md:text-2xl text-muted-foreground font-light leading-relaxed max-w-2xl">

@@ -37,7 +37,7 @@ const About = () => {
               complex problems today.
             </p>
             <p className="text-lg leading-relaxed">
-              I value patience, integrity, and the humility to keep learning—qualities I try to bring 
+              I value patience, integrity, and the humility to keep learning, which are the qualities I try to bring 
               to both technical work and everyday conversations.
             </p>
             <p className="text-lg leading-relaxed">
@@ -68,7 +68,7 @@ const About = () => {
 
             <p className="text-lg leading-relaxed">
               I care deeply about the broader impact of technology on society. Development without inner human
-              development is incomplete—a perspective reflected in models that value human well-being alongside
+              development is incomplete, and this is a perspective reflected in models that value human well-being alongside
               technical and economic progress. In collaboration, I’m a quiet specialist: I listen first, look
               for gaps I can fill, and value clear communication and sincerity over forceful opinions.
             </p>
