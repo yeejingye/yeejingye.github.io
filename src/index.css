@@ -186,7 +186,7 @@
   }
   
   .card-hover:hover {
-    @apply shadow-elevated -translate-y-0.5;
+    @apply shadow-md -translate-y-0.5;
   }
   
   /* Container with comfortable reading width */
