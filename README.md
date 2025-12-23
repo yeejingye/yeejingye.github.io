@@ -1,87 +1,79 @@
-# Welcome to your Lovable project
+# yeejingye.github.io
 
-## Project info
+Personal portfolio site built with Vite + React + TypeScript.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Tech
 
-## How can I edit this code?
+- Vite, React, TypeScript
+- React Router (client-side routes)
+- Tailwind CSS + shadcn/ui primitives
 
-There are several ways of editing your application.
+## Codebase structure
 
-**Use Lovable**
+```text
+.
+├─ src/
+│  ├─ main.tsx                  # React entry
+│  ├─ App.tsx                   # Router + app providers
+│  ├─ pages/                    # Route-level pages
+│  │  ├─ Index.tsx
+│  │  ├─ About.tsx
+│  │  ├─ Projects.tsx
+│  │  ├─ Publications.tsx
+│  │  ├─ Contact.tsx
+│  │  └─ NotFound.tsx
+│  ├─ components/
+│  │  ├─ layout/                # Navigation, footer, page shell
+│  │  ├─ archive/               # Personal Archive components
+│  │  ├─ projects/              # Project card(s)
+│  │  ├─ education/             # Education list/cards
+│  │  ├─ work/                  # Work list/cards
+│  │  ├─ ui/                    # shadcn/ui primitives
+│  │  └─ NavLink.tsx
+│  ├─ utils/                    # Content-ish helpers/data
+│  │  ├─ education.ts
+│  │  └─ work.ts
+│  ├─ hooks/                    # Reusable hooks
+│  └─ lib/utils.ts              # Shared utilities (e.g. className helpers)
+├─ public/                      # Static assets copied as-is
+├─ index.html                   # HTML shell (loads /src/main.tsx)
+├─ vite.config.ts               # Vite config (+ base path logic)
+├─ tailwind.config.ts           # Tailwind config
+└─ .github/workflows/pages.yml  # GitHub Pages build + deploy
+```
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Routes
 
-Changes made via Lovable will be committed automatically to this repo.
+Defined in `src/App.tsx`:
 
-**Use your preferred IDE**
+- `/` → `Index`
+- `/about` → `About`
+- `/projects` → `Projects`
+- `/publications` → `Publications`
+- `/contact` → `Contact`
+- `*` → `NotFound`
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Development
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
+npm ci
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+Other scripts: `npm run build`, `npm run preview`, `npm run lint`.
 
 ## GitHub Pages (yeejingye.github.io / custom domain)
 
-If you publish this repo via GitHub Pages, you must deploy the built output (Vite `dist/`), not the source root.
+- Deploy the built output (`dist/`), not the source root.
+- This repo uses GitHub Actions (`.github/workflows/pages.yml`) to build and publish `dist/`.
+- The workflow copies `CNAME` into `dist/` and adds `dist/.nojekyll`.
 
-If Pages serves the source `index.html`, it will try to load `/src/main.tsx` directly and the browser will error with something like:
-`Failed to load module script ... MIME type of "application/octet-stream"`.
+Notes:
 
-Recommended setup:
+- `vite.config.ts` sets `base` from `VITE_BASE` (preferred) and otherwise infers it from `GITHUB_REPOSITORY`.
+- `src/App.tsx` configures React Router’s `basename` from `import.meta.env.BASE_URL`.
 
-1. Repo Settings -> **Pages** -> **Build and deployment** -> **Source**: `GitHub Actions`
-2. Push to `master` / `main` (or run the workflow manually).
+## Generated / legacy folders
 
-This repo includes `.github/workflows/pages.yml` which builds with Vite and deploys the `dist/` artifact (and includes `CNAME` for custom domains).
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- `dist/` is Vite build output.
+- `docs/` contains static site artifacts from an older Pages setup (current deployment uses Actions + `dist/`).
