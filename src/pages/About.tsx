@@ -2,6 +2,8 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import { PersonalArchive } from "@/components/archive/PersonalArchive";
 import { EducationList } from "@/components/education/EducationList";
 import { education } from "@/utils/education";
+import { WorkList } from "@/components/work/WorkList";
+import { work } from "@/utils/work";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -21,19 +23,26 @@ const About = () => {
         <div className="container-prose space-y-8">
           <div className="space-y-6 animate-fade-up" style={{ animationDelay: "100ms" }}>
             <p className="text-lg leading-relaxed">
-              I'm a researcher and thinker driven by an enduring curiousity about how things work 
-              and why they matter. My journey has taken me through academic inquiry, applied research, 
-              and moments of quiet reflection, and each shaping how I approach problems today.
+              I’m Yee Jingye (庾敬業), from a small city called Temerloh in Malaysia 🇲🇾. 
+              A child of God, saved by grace through faith.
             </p>
             <p className="text-lg leading-relaxed">
-              I believe that meaningful work requires more than technical skill. It demands patience, 
-              integrity, and the humility to keep learning. I strive to bring these qualities to 
-              everything I do, whether I'm analysing complex systems or having a simple conversation.
+              I’m currently a researcher at Fraunhofer IEM in Germany, working on applied AI
+              and advanced systems engineering. I hold a PhD in mechanical engineering, with a dissertation focused 
+              on applying machine learning to biomedical problems.
             </p>
             <p className="text-lg leading-relaxed">
-              Beyond the work, I'm someone who values depth over breadth, quality over quantity, 
-              and substance over appearance. I find inspiration in thoughtful books, long walks, 
-              and conversations that challenge my assumptions.
+              I’m driven by a deep curiosity about how things work and why they matter. My path spans 
+              academic research, applied engineering, and quiet reflection, shaping how I approach 
+              complex problems today.
+            </p>
+            <p className="text-lg leading-relaxed">
+              I value patience, integrity, and the humility to keep learning—qualities I try to bring 
+              to both technical work and everyday conversations.
+            </p>
+            <p className="text-lg leading-relaxed">
+              Outside of work, I value depth over breadth and substance over appearance. I find meaning 
+              in thoughtful books, inspiring films, long walks, and conversations that challenge my assumptions.
             </p>
           </div>
         </div>
@@ -51,21 +60,36 @@ const About = () => {
           
           <div className="space-y-6">
             <p className="text-lg leading-relaxed">
-              My approach to research is shaped by a few core principles: start with genuine questions, 
-              not predetermined answers; pursue rigour without losing sight of practical impact; 
-              and always consider the human dimensions of technical problems.
+              My approach to research starts with asking what lies beneath the problem at hand. I believe many
+              challenges are symptoms rather than root causes, and that meaningful solutions require patience,
+              careful analysis, and a willingness to slow down before acting. Practical impact matters more to
+              me than theory alone, and I favour steady, iterative progress over over-optimisation.
+            </p>
+
+            <p className="text-lg leading-relaxed">
+              I care deeply about the broader impact of technology on society. Development without inner human
+              development is incomplete—a perspective reflected in models that value human well-being alongside
+              technical and economic progress. In collaboration, I’m a quiet specialist: I listen first, look
+              for gaps I can fill, and value clear communication and sincerity over forceful opinions.
             </p>
             <p className="text-lg leading-relaxed">
-              I've learned that the best insights often emerge from patient attention rather than 
-              rushed analysis. I try to create space for deep work, for second thoughts, 
-              and for the kind of careful consideration that good research requires.
-            </p>
-            <p className="text-lg leading-relaxed">
-              Collaboration matters to me. I believe that working with others and learning from their 
-              perspectives, challenging and being challenged will make the work better. I approach 
-              every project as an opportunity to grow alongside the people I'm working with.
+              I don’t expect to be fully understood. What matters to me is sincerity—in intent, in dialogue,
+              and in the work itself.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* Divider */}
+      <div className="container-prose">
+        <hr className="border-border/50" />
+      </div>
+
+      {/* Work Experience */}
+      <section className="py-16 md:py-24">
+        <div className="container-prose space-y-8">
+          <h2 className="text-muted-foreground font-normal">Work Experience</h2>
+          <WorkList items={work} />
         </div>
       </section>
 

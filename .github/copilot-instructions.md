@@ -172,4 +172,9 @@ When suggesting code, structure, or UI:
 - If a suggestion feels impressive but not human, discard it.
 
 # Deployment
-This website will be pushed to [yeejingye.github.io](https://github.com/yeejingye/yeejingye.github.io/) repo to be deployed as a Github page, and the domain name yeejingye.com would be redirected to this page.
+This website is deployed to GitHub Pages from this repo, and `yeejingye.com` points to it via the repo `CNAME`.
+
+Important (Vite + Pages):
+- Always deploy the built output (`dist/`), not the source repo root. Serving source will try to load `/src/main.tsx` and can trigger MIME errors ("application/octet-stream") and missing `/assets/*`.
+- Preferred setup: GitHub Pages **Source = GitHub Actions** using `/.github/workflows/pages.yml` (uploads `dist/` and includes `CNAME` + `.nojekyll`).
+- Keep `VITE_BASE=/` for the custom-domain site root; do not change `base` unless the hosting path changes.

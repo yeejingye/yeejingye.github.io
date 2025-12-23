@@ -21,11 +21,18 @@ export function Navigation() {
       <div className="container-wide">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo / Name */}
-          <Link 
-            to="/" 
-            className="text-lg font-semibold tracking-tight hover:text-primary transition-colors"
+          <Link
+            to="/"
+            className="flex items-center gap-3 text-lg font-semibold tracking-tight hover:text-primary transition-colors"
           >
-            J. Yee
+            <img
+              src="/logo_jy_transparent.png"
+              alt="J. Yee logo"
+              className="h-6 w-auto md:h-7"
+              decoding="async"
+              loading="eager"
+            />
+            <span>J. Yee</span>
           </Link>
 
           {/* Desktop Navigation */}
