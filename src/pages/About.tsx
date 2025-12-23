@@ -82,6 +82,11 @@ const About = () => {
         </div>
       </section>
 
+      {/* Divider */}
+      <div className="container-prose">
+        <hr className="border-border/50" />
+      </div>
+
       {/* Personal Archive */}
       <div className="container-prose">
         <PersonalArchive />

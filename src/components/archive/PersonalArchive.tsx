@@ -3,11 +3,16 @@ import { ArchiveEntry } from "./ArchiveEntry";
 const archiveData = [
   {
     year: "2025",
-    motto: "Metamorphosis",
+    motto: "Metamorphose",
     mottoSubtitle: "A year of transformation",
+    logo: {
+      src: "/archive/2025_metamorphose.png",
+      alt: "Metamorphose Logo",
+    },
     soundtrack: {
-      title: "Oceans",
-      artist: "Hillsong United",
+      title: "New Wine",
+      artist: "Hillsong Worship",
+      link: "https://open.spotify.com/track/5OMpZa1m8amJy7ICItG1Sc?si=6dcf1ea4932c4db8",
     },
     scripture: {
       text: "Whatever you do, work at it with all your heart, as working for the Lord.",
@@ -17,11 +22,16 @@ const archiveData = [
   },
   {
     year: "2023-2024",
-    motto: "Wander into Wonders",
+    motto: "Wander into Wonder",
     mottoSubtitle: "Exploring the unknown with faith",
+    logo: {
+      src: "/archive/2023_wiw.png",
+      alt: "Wander into Wonder Logo",
+    },
     soundtrack: {
       title: "Oceans (Where Feet May Fail)",
-      artist: "Hillsong United",
+      artist: "Hillsong UNITED",
+      link: "https://open.spotify.com/track/0Bn1DSXfisvfKjGUwI6rzW?si=fb825e5022ad4c73",
     },
     scripture: {
       text: "For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you.",
@@ -48,6 +58,7 @@ export function PersonalArchive() {
             year={entry.year}
             motto={entry.motto}
             mottoSubtitle={entry.mottoSubtitle}
+            logo={entry.logo}
             soundtrack={entry.soundtrack}
             scripture={entry.scripture}
             accentClass={entry.accentClass}

@@ -16,12 +16,17 @@ interface ArchiveEntryProps {
     reference: string;
   };
   accentClass?: string;
+  logo?: {
+    src: string;
+    alt?: string;
+  };
 }
 
 export function ArchiveEntry({
   year,
   motto,
   mottoSubtitle,
+  logo,
   soundtrack,
   scripture,
   accentClass = "text-primary",
@@ -64,21 +69,45 @@ export function ArchiveEntry({
           <div className="pb-10 space-y-10">
             {/* Motto Artifact */}
             <div className="space-y-3">
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-foreground/5 flex items-center justify-center">
-                  <span className="text-xs font-semibold text-foreground/60">
-                    {year.slice(-2)}
-                  </span>
-                </div>
+              <div className="grid grid-cols-[4rem,1fr] md:grid-cols-[5rem,1fr] gap-x-5 gap-y-1 items-start">
+                {logo ? (
+                  <div
+                    className={cn(
+                      "w-16 h-16 md:w-20 md:h-20 bg-foreground/5 rounded-md flex items-center justify-center p-1.5 md:p-2",
+                      mottoSubtitle ? "row-span-2" : "row-span-1"
+                    )}
+                  >
+                    <img
+                      src={logo.src}
+                      alt={logo.alt ?? `Logo for ${year}`}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                ) : (
+                  <div
+                    className={cn(
+                      "w-16 h-16 md:w-20 md:h-20 bg-foreground/5 rounded-md flex items-center justify-center",
+                      mottoSubtitle ? "row-span-2" : "row-span-1"
+                    )}
+                  >
+                    <span className="text-xs font-semibold text-foreground/60">
+                      {year.slice(-2)}
+                    </span>
+                  </div>
+                )}
+
                 <h4 className="font-serif text-xl font-medium tracking-wide uppercase">
                   {motto}
                 </h4>
+
+                {mottoSubtitle && (
+                  <p className="text-sm text-muted-foreground">
+                    {mottoSubtitle}
+                  </p>
+                )}
               </div>
-              {mottoSubtitle && (
-                <p className="text-sm text-muted-foreground pl-14">
-                  {mottoSubtitle}
-                </p>
-              )}
             </div>
 
             {/* Soundtrack Artifact */}
