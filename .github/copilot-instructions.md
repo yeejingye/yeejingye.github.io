@@ -170,3 +170,6 @@ It is a quiet, intentional personal space.
 When suggesting code, structure, or UI:
 - Optimize for clarity, restraint, and longevity.
 - If a suggestion feels impressive but not human, discard it.
+
+# Deployment
+This website will be pushed to [yeejingye.github.io](https://github.com/yeejingye/yeejingye.github.io/) repo to be deployed as a Github page, and the domain name yeejingye.com would be redirected to this page.

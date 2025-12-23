@@ -1,5 +1,7 @@
 import { PageLayout } from "@/components/layout/PageLayout";
 import { PersonalArchive } from "@/components/archive/PersonalArchive";
+import { EducationList } from "@/components/education/EducationList";
+import { education } from "@/utils/education";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -71,6 +73,14 @@ const About = () => {
       <div className="container-prose">
         <hr className="border-border/50" />
       </div>
+
+      {/* Education */}
+      <section className="py-16 md:py-24">
+        <div className="container-prose space-y-8">
+          <h2 className="text-muted-foreground font-normal">Education</h2>
+          <EducationList items={education} />
+        </div>
+      </section>
 
       {/* Personal Archive */}
       <div className="container-prose">
