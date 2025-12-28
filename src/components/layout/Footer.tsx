@@ -39,6 +39,14 @@ export function Footer() {
             >
               GitHub
             </a>
+            <a
+              href="https://scholar.google.com/citations?user=4MBA_rcAAAAJ&hl=en"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Google Scholar
+            </a>
           </div>
         </div>
       </div>
