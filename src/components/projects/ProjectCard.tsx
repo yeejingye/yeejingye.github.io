@@ -3,13 +3,16 @@ import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";
 import { useId, useMemo, useState } from "react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { resolveTechStackLogo, type TechStackItem } from "@/utils/techstack";
 import { resolvePartnerLogo, type PartnerItem } from "@/utils/partners";
+import { resolveProjectImage, type ProjectImage } from "@/utils/projectImage";
 
 interface ProjectCardProps {
   title: string;
   icon?: ReactNode;
   description: string;
+  image?: ProjectImage;
   problem?: string;
   learning?: string;
   techStack?: TechStackItem[];
@@ -23,6 +26,7 @@ export function ProjectCard({
   title,
   icon,
   description,
+  image,
   problem,
   learning,
   techStack = [],
@@ -38,6 +42,8 @@ export function ProjectCard({
 
   const hasDetails = Boolean(problem || learning || techStack.length > 0 || partners.length > 0);
   const [open, setOpen] = useState(false);
+  const [imageError, setImageError] = useState(false);
+  const imageSrc = resolveProjectImage(image?.file);
 
   return (
     <article
@@ -72,6 +78,30 @@ export function ProjectCard({
             </a>
           )}
         </div>
+
+        {image && (
+          <div className="pt-1">
+            <AspectRatio
+              ratio={16 / 9}
+              className="rounded-md overflow-hidden border border-border/50 bg-muted"
+            >
+              {imageSrc && !imageError ? (
+                <img
+                  src={imageSrc}
+                  alt={image.alt}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-full w-full object-cover"
+                  onError={() => setImageError(true)}
+                />
+              ) : (
+                <div className="h-full w-full flex items-center justify-center px-4 text-center">
+                  <span className="text-xs text-muted-foreground">{image.alt}</span>
+                </div>
+              )}
+            </AspectRatio>
+          </div>
+        )}
 
         <p className="text-muted-foreground">{description}</p>
 

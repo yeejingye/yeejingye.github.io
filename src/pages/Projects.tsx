@@ -6,6 +6,10 @@ const projects = [
   {
     title: "Automation of Airport Passenger Boarding Bridge",
     icon: <Plane className="h-4 w-4" />,
+    image: {
+      file: "fastgate.png",
+      alt: "Automated passenger boarding bridge prototype in an airport environment",
+    },
     description: "Prototype for automated passenger boarding bridge operation using multi-modal perception for obstacle and aircraft door detection, integrated with robotic actuation.",
     problem: "Conventional passenger boarding bridges rely heavily on manual operation due to safety-critical constraints and highly dynamic apron environments. Achieving reliable automation requires robust perception under varying weather and lighting conditions, accurate aircraft door localisation, and safe integration of perception outputs with robotic actuation on legacy infrastructure.",
     learning: "Perception accuracy alone is insufficient for real-world automation. Handling uncertainty, fusing heterogeneous sensor data, and addressing system-level safety constraints revealed the gap between benchmark computer vision performance and deployable robotic systems.",
@@ -27,6 +31,10 @@ const projects = [
   {
     title: "Data Insights with Generative AI",
     icon: <Database className="h-4 w-4" />,
+    image: {
+      file: "datawithgenai.png",
+      alt: "Structured data extraction from engineering reports with a natural-language interface",
+    },
     description: "Automated pipeline for extracting structured data from legacy engineering test reports and enabling natural-language querying via a generative AI interface.",
     problem: "Engineering knowledge is often locked in legacy documents with inconsistent structure, making systematic reuse and analysis difficult. The core challenge is to reliably transform semi-structured textual data into a consistent database schema while preserving technical meaning, context, and traceability.",
     learning: "Data engineering and schema design proved as critical as extraction algorithms. Generative AI was only effective when grounded on a well-structured and curated database with explicit handling of ambiguities and domain-specific terminology.",
@@ -39,11 +47,15 @@ const projects = [
       { name: "Streamlit", logo: "streamlit.png" },
       { name: "SQLite", logo: "sqlite.png" },
     ],
-    tags: ["NLP", "Data Engineering", "Generative AI", "Industrial AI"],
+    tags: ["Legacy Document Extraction", "Data Engineering", "Generative AI", "Industrial AI"],
   },
   {
     title: "Generative AI Framework for CAD Modelling",
     icon: <Ruler className="h-4 w-4" />,
+    image: {
+      file: "texttocad.png",
+      alt: "Parametric CAD model generation from natural-language specifications",
+    },
     description: "Research framework for converting natural-language specifications into parametric CAD models using large language models and structured evaluation.",
     problem: "Existing text-to-CAD approaches often fail due to ambiguous language input, limited parametric control, and insufficient evaluation of geometric and functional correctness. A structured framework is required to bridge linguistic intent and formal CAD representations.",
     learning: "Prompt clarification and constraint formalization were more critical than model size for reliable CAD generation. Meaningful evaluation required assessing geometric validity, parametric consistency, functional intent, and downstream engineering usability.",
@@ -57,11 +69,15 @@ const projects = [
       { name: "CADQuery", logo: "cadquery.png" },
       { name: "NiceGUI", logo: "nicegui.png" },
     ],
-    tags: ["CAD Automation", "LLMs", "Engineering Design", "Research"],
+    tags: ["CAD Automation", "LLM", "Engineering Design", "Research"],
   },
   {
     title: "Smart Diagnosis System for Upper Limb Spasticity",
     icon: <Activity className="h-4 w-4" />,
+    image: {
+      file: "uls.png",
+      alt: "Clinical assessment workflow supported by multimodal signal analysis",
+    },
     description: "Clinically validated diagnostic support system integrating multi-modal physiological signals and machine learning for spasticity assessment.",
     problem: "Clinical assessment of upper limb spasticity relies heavily on subjective scales, leading to inter-rater variability and limited reproducibility. The challenge is to integrate heterogeneous physiological and biomechanical signals into a reliable and interpretable classification system that supports clinical judgment.",
     learning: "Clinical acceptance depended on interpretability and validation rather than accuracy alone. Multi-modal signal integration and classical machine learning improved robustness through close collaboration with physicians.",
@@ -77,7 +93,7 @@ const projects = [
       { name: "SHAP", logo: "shap.png" },
       { name: "Qt", logo: "qt.png" },
     ],
-    tags: ["Biomedical AI", "Machine Learning", "Clinical Decision Support"],
+    tags: ["Biomedical Engineering", "Machine Learning", "Upper Limb Spasticity", "Clinical Decision Support", "Explainable AI"],
   },
 ];
 
@@ -114,6 +130,7 @@ const Projects = () => {
                 <ProjectCard
                   title={project.title}
                   icon={project.icon}
+                  image={project.image}
                   description={project.description}
                   problem={project.problem}
                   learning={project.learning}
