@@ -1,6 +1,6 @@
 import { PageLayout } from "@/components/layout/PageLayout";
 import { ProjectCard } from "@/components/projects/ProjectCard";
-import { Activity, Bot, Database, Plane, Ruler } from "lucide-react";
+import { Activity, Database, Plane, Ruler } from "lucide-react";
 
 const projects = [
   {
@@ -10,11 +10,11 @@ const projects = [
     problem: "Conventional passenger boarding bridges rely heavily on manual operation due to safety-critical constraints and highly dynamic apron environments. Achieving reliable automation requires robust perception under varying weather and lighting conditions, accurate aircraft door localisation, and safe integration of perception outputs with robotic actuation on legacy infrastructure.",
     learning: "Perception accuracy alone is insufficient for real-world automation. Handling uncertainty, fusing heterogeneous sensor data, and addressing system-level safety constraints revealed the gap between benchmark computer vision performance and deployable robotic systems.",
     techStack: [
-      {name: "Python", logo: "python.png"}, 
-      {name: "OpenCV", logo: "opencv.png"}, 
-      {name: "Docker", logo: "docker.png"}, 
-      {name: "YOLO", logo: "yolov8.png"}, 
-      {name: "SAM"},
+      { name: "Python", logo: "python.png" },
+      { name: "OpenCV", logo: "opencv.png" },
+      { name: "Docker", logo: "docker.png" },
+      { name: "YOLO", logo: "yolov8.png" },
+      { name: "SAM" },
     ],
     tags: ["Sensor Fusion", "Computer Vision", "Robotics", "Automation", "Applied AI"],
   },
@@ -25,12 +25,12 @@ const projects = [
     problem: "Engineering knowledge is often locked in legacy documents with inconsistent structure, making systematic reuse and analysis difficult. The core challenge is to reliably transform semi-structured textual data into a consistent database schema while preserving technical meaning, context, and traceability.",
     learning: "Data engineering and schema design proved as critical as extraction algorithms. Generative AI was only effective when grounded on a well-structured and curated database with explicit handling of ambiguities and domain-specific terminology.",
     techStack: [
-      {name: "Python", logo: "python.png"}, 
-      {name: "PyMuPDF", logo: "pymupdf.png"},
-      {name: "Vanna AI", logo: "vannaai.png"},
-      {name: "OpenAI", logo: "openai.png"},
-      {name: "Streamlit", logo: "streamlit.png"},
-      {name: "SQLite", logo: "sqlite.png"},
+      { name: "Python", logo: "python.png" },
+      { name: "PyMuPDF", logo: "pymupdf.png" },
+      { name: "Vanna AI", logo: "vannaai.png" },
+      { name: "OpenAI", logo: "openai.png" },
+      { name: "Streamlit", logo: "streamlit.png" },
+      { name: "SQLite", logo: "sqlite.png" },
     ],
     tags: ["NLP", "Data Engineering", "Generative AI", "Industrial AI"],
   },
@@ -41,11 +41,11 @@ const projects = [
     problem: "Existing text-to-CAD approaches often fail due to ambiguous language input, limited parametric control, and insufficient evaluation of geometric and functional correctness. A structured framework is required to bridge linguistic intent and formal CAD representations.",
     learning: "Prompt clarification and constraint formalization were more critical than model size for reliable CAD generation. Meaningful evaluation required assessing geometric validity, parametric consistency, functional intent, and downstream engineering usability.",
     techStack: [
-      {name: "Python", logo: "python.png"}, 
-      {name: "OpenAI", logo: "openai.png"},
-      {name: "Agno", logo: "agno.jpg"},
-      {name: "CADQuery", logo: "cadquery.png"},
-      {name: "NiceGUI", logo: "nicegui.png"},
+      { name: "Python", logo: "python.png" },
+      { name: "OpenAI", logo: "openai.png" },
+      { name: "Agno", logo: "agno.jpg" },
+      { name: "CADQuery", logo: "cadquery.png" },
+      { name: "NiceGUI", logo: "nicegui.png" },
     ],
     tags: ["CAD Automation", "LLMs", "Engineering Design", "Research"],
   },
@@ -56,12 +56,11 @@ const projects = [
     problem: "Clinical assessment of upper limb spasticity relies heavily on subjective scales, leading to inter-rater variability and limited reproducibility. The challenge is to integrate heterogeneous physiological and biomechanical signals into a reliable and interpretable classification system that supports clinical judgment.",
     learning: "Clinical acceptance depended on interpretability and validation rather than accuracy alone. Multi-modal signal integration and classical machine learning improved robustness through close collaboration with physicians.",
     techStack: [
-      {name: "Python", logo: "python.png"},
-      {name: "Pandas", logo: "pandas.png"},
-      {name: "Scikit-Learn", logo: "scikitlearn.png"}, 
-      {name: "SHAP", logo: "shap.png"},
-      {name: "Qt", logo: "qt.png"},
-
+      { name: "Python", logo: "python.png" },
+      { name: "Pandas", logo: "pandas.png" },
+      { name: "Scikit-Learn", logo: "scikitlearn.png" },
+      { name: "SHAP", logo: "shap.png" },
+      { name: "Qt", logo: "qt.png" },
     ],
     tags: ["Biomedical AI", "Machine Learning", "Clinical Decision Support"],
   },
