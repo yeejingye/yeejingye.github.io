@@ -81,7 +81,6 @@ Each year contains exactly three artifacts:
 - No embeds
 - No autoplay
 - Optional external link only
-
 3. Scripture of the Year
 - Displayed as a typographic pull-quote
 - Serif font
@@ -102,8 +101,6 @@ Each year may evolve only through:
 Explicitly forbidden:
 - Changing fonts per year
 - Background color blocks
-- Icons or symbols for faith
-- Labels like “Faith”, “Beliefs”, or “Christian”
 
 # Styling & Design System Rules
 ## Typography
