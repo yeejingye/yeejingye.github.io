@@ -1,5 +1,5 @@
 import { PageLayout } from "@/components/layout/PageLayout";
-import { Mail, Linkedin, Github } from "lucide-react";
+import { Mail, Linkedin, Github, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Contact = () => {
@@ -76,6 +76,22 @@ const Contact = () => {
                 >
                   <Github className="h-4 w-4" />
                   GitHub
+                </a>
+              </Button>
+
+              <Button
+                asChild
+                variant="ghost"
+                size="lg"
+                className="justify-start text-muted-foreground hover:text-foreground"
+              >
+                <a
+                  href="https://scholar.google.com/citations?user=4MBA_rcAAAAJ&hl=en"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <GraduationCap className="h-4 w-4" />
+                  Google Scholar
                 </a>
               </Button>
             </div>
