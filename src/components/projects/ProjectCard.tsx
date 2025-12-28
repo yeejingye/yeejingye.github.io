@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import { useId, useMemo, useState } from "react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { resolveTechStackLogo, type TechStackItem } from "@/utils/techstack";
+import { resolvePartnerLogo, type PartnerItem } from "@/utils/partners";
 
 interface ProjectCardProps {
   title: string;
@@ -12,6 +13,7 @@ interface ProjectCardProps {
   problem?: string;
   learning?: string;
   techStack?: TechStackItem[];
+  partners?: PartnerItem[];
   tags?: string[];
   link?: string;
   className?: string;
@@ -24,6 +26,7 @@ export function ProjectCard({
   problem,
   learning,
   techStack = [],
+  partners = [],
   tags = [],
   link,
   className,
@@ -33,7 +36,7 @@ export function ProjectCard({
   const triggerId = `project-details-trigger-${safeId}`;
   const contentId = `project-details-content-${safeId}`;
 
-  const hasDetails = Boolean(problem || learning || techStack.length > 0);
+  const hasDetails = Boolean(problem || learning || techStack.length > 0 || partners.length > 0);
   const [open, setOpen] = useState(false);
 
   return (
@@ -153,6 +156,55 @@ export function ProjectCard({
                       <div className="flex w-max items-center gap-4 pb-1">
                         {techStack.map((item) => {
                           const src = resolveTechStackLogo(item.logo);
+                          const content = src ? (
+                            <img
+                              src={src}
+                              alt={item.name}
+                              title={item.name}
+                              loading="lazy"
+                              decoding="async"
+                              className="h-6 w-auto max-w-none object-contain opacity-80 transition-opacity duration-200 hover:opacity-100 motion-reduce:transition-none"
+                            />
+                          ) : (
+                            <span className="text-xs px-2.5 py-1 rounded-full bg-secondary text-secondary-foreground whitespace-nowrap">
+                              {item.name}
+                            </span>
+                          );
+
+                          return item.href ? (
+                            <a
+                              key={item.name}
+                              href={item.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center snap-start"
+                              aria-label={`${item.name} (opens in new tab)`}
+                            >
+                              {content}
+                            </a>
+                          ) : (
+                            <div key={item.name} className="flex items-center snap-start">
+                              {content}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {partners.length > 0 && (
+                  <div>
+                    <span className="text-xs font-medium text-muted-foreground/70 uppercase tracking-wide">
+                      Partners
+                    </span>
+                    <div
+                      className="mt-2 -mx-1 px-1 overflow-x-auto snap-x snap-mandatory"
+                      aria-label="Project partners"
+                    >
+                      <div className="flex w-max items-center gap-4 pb-1">
+                        {partners.map((item) => {
+                          const src = resolvePartnerLogo(item.logo);
                           const content = src ? (
                             <img
                               src={src}
