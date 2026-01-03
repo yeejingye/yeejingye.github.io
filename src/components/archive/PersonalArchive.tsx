@@ -2,6 +2,25 @@ import { ArchiveEntry } from "./ArchiveEntry";
 
 const archiveData = [
   {
+    year: "2026",
+    motto: "Panim el Panim",
+    mottoSubtitle: "Choosing presence without mediation",
+    logo: {
+      src: "/archive/2026_pep.png",
+      alt: "Panim el Panim Logo",
+    },
+    soundtrack: {
+      title: "Known By You",
+      artist: "Gateway Worship",
+      link: "https://open.spotify.com/track/0vOw510PyX1EIuRZwURX9H?si=e5281b283076411d",
+    },
+    scripture: {
+      text: "The Lord would speak to Moses face to face, as one speaks to a friend. Then Moses would return to the camp, but his young aide Joshua son of Nun did not leave the tent.",
+      reference: "Exodus 33:11",
+    },
+    accentClass: "text-primary",
+  },
+  {
     year: "2025",
     motto: "Metamorphose",
     mottoSubtitle: "A year of transformation",
@@ -18,7 +37,7 @@ const archiveData = [
       text: "Whatever you do, work at it with all your heart, as working for the Lord.",
       reference: "Colossians 3:23",
     },
-    accentClass: "text-primary",
+    accentClass: "text-year-2024",
   },
   {
     year: "2023-2024",
@@ -37,7 +56,7 @@ const archiveData = [
       text: "For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you.",
       reference: "Jeremiah 29:11",
     },
-    accentClass: "text-year-2024",
+    accentClass: "text-year-2023",
   }
 ];
 
