@@ -11,6 +11,10 @@ import Contact from "./pages/Contact";
 import Library from "./pages/Library";
 import NotFound from "./pages/NotFound";
 
+import { useEffect } from "react";
+import { initGA } from "./analytics";
+import usePageTracking from "./hooks/usePageTracking";
+
 const queryClient = new QueryClient();
 
 const routerBasename =
@@ -18,12 +22,28 @@ const routerBasename =
     ? "/"
     : import.meta.env.BASE_URL.replace(/\/$/, "");
 
-const App = () => (
+const App = () => {
+  const measurementId = import.meta.env.VITE_GA_ID;
+
+  useEffect(() => {
+    if (measurementId) {
+      initGA(measurementId);
+    }
+  }, [measurementId]);
+
+  // Small component to call the page tracking hook inside the Router context
+  const Tracking = () => {
+    usePageTracking();
+    return null;
+  };
+
+  return (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
       <BrowserRouter basename={routerBasename}>
+        <Tracking />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
@@ -36,6 +56,7 @@ const App = () => (
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
-);
+  );
+};
 
 export default App;
