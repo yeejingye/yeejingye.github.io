@@ -33,6 +33,7 @@ jobs:
       - name: Build
         env:
           VITE_BASE: /
+          VITE_GA_ID: ${{ secrets.VITE_GA_ID }}
         run: npm run build
 
       - name: Include custom domain + disable Jekyll
