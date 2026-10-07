@@ -28,6 +28,15 @@ type Publication = {
 
 const publications: Publication[] = [
   {
+    year: "2026",
+    title: "Collision-Aware Trajectory Planning for Passenger Boarding Bridges in Airport Apron",
+    publicationType: "Journal",
+    venue: "Journal of Mechanical Engineering (JMechE), 23(3), 216–234",
+    note: "A.A.A. Thederajan, C.Y. Low, J. Yee, C.T. Koh, R. Abd Rahman, T. Seidenberg",
+    link: "https://doi.org/10.24191/jmeche.v23i3.13743",
+    tags: ["Robotics", "Trajectory Planning", "Autonomous Docking", "ROS 2", "MoveIt 2"],
+  },
+  {
     year: "2025",
     title: "System Architecture and Analytical Inverse Kinematics for Autonomous Docking of Passenger Boarding Bridges",
     publicationType: "Proceedings",
