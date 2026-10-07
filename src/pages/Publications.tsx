@@ -114,7 +114,7 @@ const publications: Publication[] = [
     publicationType: "Journal",
     venue: "Movement Disorders",
     note: "N. Mohamad Hashim, J. Yee, N.A. Othman, K. Johar, C.Y. Low, F.A. Hanapiah, N.A. Che Zakaria",
-    link: "https://www.researchgate.net/profile/Armando-Armas-Salazar-2/publication/366385878_Role_of_the_Stereotactic_Dentatotomy_for_the_management_of_Movement_Disorders/links/639e125f095a6a7774396063/Role-of-the-Stereotactic-Dentatotomy-for-the-management-of-Movement-Disorders.pdf",
+    link: "https://www.tandfonline.com/doi/full/10.1080/10255842.2021.1990270",
     tags: ["Spasticity", "Machine Learning"],
   },
   {

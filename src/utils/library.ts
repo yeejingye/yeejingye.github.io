@@ -33,7 +33,7 @@ export const libraryItems: LibraryItem[] = [
     id: "michael-j-sandels-justice-whats-the-right-thing-to-do",
     kind: "book",
     title: "Justice: What's the Right Thing to Do?",
-    author: "Michael J. Sandels",
+    author: "Michael J. Sandel",
     publishedYear: "2009",
     consumedYear: "2025",
     status: "Finished",
