@@ -11,9 +11,8 @@ import Contact from "./pages/Contact";
 import Library from "./pages/Library";
 import NotFound from "./pages/NotFound";
 
-import { useEffect } from "react";
-import { initGA } from "./analytics";
-import usePageTracking from "./hooks/usePageTracking";
+import Privacy from "./pages/Privacy";
+import LegalNotice from "./pages/LegalNotice";
 
 const queryClient = new QueryClient();
 
@@ -23,27 +22,12 @@ const routerBasename =
     : import.meta.env.BASE_URL.replace(/\/$/, "");
 
 const App = () => {
-  const measurementId = import.meta.env.VITE_GA_ID;
-
-  useEffect(() => {
-    if (measurementId) {
-      initGA(measurementId);
-    }
-  }, [measurementId]);
-
-  // Small component to call the page tracking hook inside the Router context
-  const Tracking = () => {
-    usePageTracking();
-    return null;
-  };
-
   return (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
       <BrowserRouter basename={routerBasename}>
-        <Tracking />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
@@ -51,6 +35,8 @@ const App = () => {
           <Route path="/publications" element={<Publications />} />
           <Route path="/library" element={<Library />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/legal" element={<LegalNotice />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
