@@ -27,9 +27,9 @@ export function Navigation() {
             className="flex items-center gap-3 text-lg font-semibold tracking-tight hover:text-primary transition-colors"
           >
             <img
-              src="/logo_jy_transparent.png"
+              src="/logo_jy_black.png"
               alt="J. Yee logo"
-              className="h-6 w-auto md:h-7"
+              className="h-8 w-auto md:h-9"
               decoding="async"
               loading="eager"
             />
