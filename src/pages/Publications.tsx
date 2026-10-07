@@ -60,7 +60,7 @@ const publications: Publication[] = [
     publicationType: "Journal",
     venue: "Journal of Mechanical Engineering (JMechE)",
     note: "S. Wu, C.Y. Low, J. Yee, T. Schmieg, Y.H.P. Manurung",
-    link: "https://ir.uitm.edu.my/id/eprint/126913/1/126913.pdf",
+    link: "https://ir.uitm.edu.my/id/eprint/126913/",
     tags: ["Process Mining", "RAG", "LLM"],
   },
   {
