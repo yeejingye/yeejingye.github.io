@@ -29,6 +29,15 @@ type Publication = {
 const publications: Publication[] = [
   {
     year: "2025",
+    title: "System Architecture and Analytical Inverse Kinematics for Autonomous Docking of Passenger Boarding Bridges",
+    publicationType: "Proceedings",
+    venue: "2025 IEEE International Symposium on Systems Engineering (ISSE)",
+    note: "J. Yee, D. Hermelingmeier, A.A.A. Thederajan, C.Y. Low, A. Gossen, R. Dumitrescu",
+    link: "https://ieeexplore.ieee.org/abstract/document/11370093/",
+    tags: ["System Engineering", "Robotics", "Inverse Kinematics", "Automation"],
+  },
+  {
+    year: "2025",
     title: "Real-time object detection and localization for airport aprons",
     publicationType: "Proceedings",
     venue: "Seventeenth International Conference on Digital Image Processing (ICDIP 2025)",
